@@ -1,6 +1,5 @@
 <?php
-$_SERVER['HTTP_HOST'] === "localhost" ? require_once './llega.top/shortener_config.php' : require_once '../config/llega.top/shortener_config.php';
-$db = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$_SERVER['HTTP_HOST'] === "localhost" ? $db = new mysqli('localhost', 'root', '', 'llegatop') : $db = new mysqli('localhost', 'llegatop', 'REDACTED', 'llegatop');
 if ($db->connect_error) die("Connection failed: " . $db->connect_error);
 
 $oneYearAgo = date('Y-m-d', strtotime('-1 year'));

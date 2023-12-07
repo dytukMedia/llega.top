@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
-$_SERVER['HTTP_HOST'] === "localhost" ? $db = new mysqli('localhost', 'root', '', 'dytukme_llegatop') : $db = new mysqli('localhost', 'dytukme_llegatop', 'DEqSV5BMX', 'dytukme_llegatop');
+$_SERVER['HTTP_HOST'] === "localhost" ? $db = new mysqli('localhost', 'root', '', 'llegatop') : $db = new mysqli('localhost', 'llegatop', 'REDACTED', 'llegatop');
 
 if ($db->connect_error) die("Connection failed: " . $db->connect_error);
 if ($_SERVER["REQUEST_METHOD"] === "GET") isset($_GET["code"]) ? handleRedirectRequest($db, $_GET["code"]) : (isset($_GET["url"]) ? handleShortenRequest($db, $_GET["url"]) : include_once('./homepage.php'));
